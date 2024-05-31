@@ -1,0 +1,105 @@
+<style>
+    .v{
+        border: 3px solid red;
+        background-color: yellowgreen;
+    }
+    .i{
+        border: 3px solid yellowgreen;
+        background-color: red;
+    }
+</style>
+
+<div style="width: 500px; margin: auto;">
+<!-- <form #frm="ngForm" (ngSubmit)="onRegistrationValidate(frm.value)">
+    <br>
+    <br>
+    
+    <span class="material-icons"  style="color:blue;font-size:25px;">
+        person
+        </span>
+        {{frm.value | json}}
+    <input type="text" name="uid" #u="ngModel" ngModel required minlength="5" 
+    [class.v]="u.valid && u.touched" [class.i]="u.touched && u.invalid" class="form-control"/>
+    <div class="btn btn-info" *ngIf="u.errors?.['required'] && u.touched">Enter Username</div>
+    <div class="btn btn-info" *ngIf="u.touched && u.invalid">Username lenght should be >5</div>
+
+    <br>
+   
+    <span class="material-icons" style="color:blue;font-size:25px;">
+        key
+        </span>
+    <input type="password" name="pwd" #p="ngModel" ngModel required  pattern="[a-z]{5}\d{3}" 
+    [class.v]="p.valid && p.touched" [class.i]="p.touched && p.invalid" class="form-control"/>
+    <div class="btn btn-info" *ngIf="p.errors?.['required'] && p.touched">Enter Password</div>
+    <div class="btn btn-info" *ngIf="p.touched && p.invalid">Password should contain 2 alpha and 3 nums</div>
+<br>
+ 
+ <span class="material-icons" style="color:blue;font-size:25px;">
+    calendar_month
+    </span>
+<input type="date" name="dob" #dob="ngModel" ngModel required  
+[class.v]="dob.valid && dob.touched" [class.i]="dob.touched && dob.invalid" class="form-control"/>
+<div class="btn btn-info" *ngIf="dob.errors?.['required'] && dob.touched">Enter DOB</div>
+<div class="btn btn-info" *ngIf="dob.touched && dob.invalid">DOB cannot be after today</div>
+<br>
+
+
+<span class="material-icons" style="color:blue;font-size:25px;">
+    man
+    </span>
+<label>Male</label>
+<input type="radio" value="Male" group="gender"/>
+<span class="material-icons" style="color:blue;font-size:25px;">
+    woman
+    </span>
+<label>Female</label>
+<input type="radio" value="Female" group="gender"/>
+<br>
+<br>
+
+<span class="material-icons" style="color:blue;font-size:25px;">
+    email
+    </span>
+<input type="email" name="Email" #e="ngModel" ngModel required  pattern="[a-z]{5}\d{3}" 
+[class.v]="e.valid && e.touched" [class.i]="e.touched && e.invalid" class="form-control"/>
+<div class="btn btn-info" *ngIf="e.errors?.['required'] && e.touched">Enter Email</div>
+<div class="btn btn-info" *ngIf="e.touched && e.invalid">Enter valid email</div>
+<br>
+
+
+<span class="material-icons" style="color:blue;font-size:25px;">
+    person_pin
+    </span>
+<input type="text" name="Nationality" #n="ngModel" ngModel required  pattern="[a-z]{5}\d{3}" 
+[class.v]="n.valid && n.touched" [class.i]="n.touched && n.invalid" class="form-control"/>
+<div class="btn btn-info" *ngIf="n.errors?.['required'] && n.touched">Enter Nationality</div>
+<div class="btn btn-info" *ngIf="n.touched && n.invalid">Enter valid Nationality</div>
+<br>
+    <div>
+        <input type="submit" [disabled]="frm.form.invalid" value="Register" class="btn btn-primary">
+    </div>
+</form>
+</div>
+<div style="background-color: burlywood; color: black; padding-left: 50%;"> -->
+
+    <form #frm="ngForm" (ngSubmit)="validate(frm.value)">
+
+        <label>Enter username</label>
+        <input type="text" name="uname" ngModel class="form-control"/>
+        <label>Enter Password</label>
+        <input type="password" name="password" ngModel class="form-control"/>
+        <label>Select Gender</label>
+        M<input type="radio" name="gender" value=1 ngModel class="form-checked"/>
+        F<input type="radio" name="gender" value=0 ngModel class="form-checked"/><br>
+        <label>Select DOB</label>
+        <input type="date" name="DOB" ngModel class="form-control"/>
+        <label>Enter Email</label>
+        <input type="email" name="email" ngModel class="form-control"/>
+        <label>Select Nationality</label>
+        <select name="nationality" ngModel class="form-control">
+            <option>India</option>
+            <option>Japan</option>
+        </select>
+        <input type="submit" class="btn btn-primary"/>
+        </form>
+        </div>

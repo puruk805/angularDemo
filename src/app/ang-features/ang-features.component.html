@@ -1,0 +1,123 @@
+<p>ang-features works!</p>
+
+<!-- angular previous If condition-->
+
+<!-- <ng-container *ngIf="b; then one; else two"> </ng-container>
+ <ng-template #one>
+    <div>condition one executed</div>
+  </ng-template>
+
+  <ng-template #two>
+    <div>condition two executed</div>
+  </ng-template>
+  <hr> -->
+
+  <!-- Angular 17-->
+  <!-- @if(b)  {
+    <div> condition one executed </div>
+}
+@else
+{
+    <div>    condition two executed  </div>
+}
+<hr> -->
+<!--if and else if-->
+<!-- 
+<h2 *ngIf="type == 1; else two">One</h2>
+<ng-template #two>
+    <h2 *ngIf="type == 2; else three">Two</h2>
+</ng-template>
+<ng-template #three>
+    <h2>three</h2>
+</ng-template>
+
+<hr> -->
+<!-- 
+@if (type == 1) {
+    <h2>One</h2>
+} @else if(type == 2) {
+    <h2>Two</h2>
+} @else {
+    <h2>Three</h2>
+} -->
+<!-- <hr> -->
+<!--Switch-->
+
+
+<!-- <div [ngSwitch]="1">
+    <p *ngSwitchCase="0">You have first message</p>
+    <p *ngSwitchCase="1">You have second message</p>
+    <p *ngSwitchDefault>default executed</p>
+</div>
+<hr> -->
+
+<!-- @switch (type) {
+    @case (0) {
+      <div>You have first message</div>
+    }
+    @case (1) {
+      <div>You have second message</div>
+    }
+    @default{
+      <div>default executed</div>
+    }
+  } -->
+  <!-- <hr>
+  <div *ngFor="let item of countries;let i = index;let f = first;let l = last;let e = even;let o = odd;">
+    First:{{f}} - Last:{{l}} - Even:{{e}} -Odd:{{o}} : {{item}}<br>   
+</div>
+<hr> -->
+<!-- @for (item of countries; track item; let i = $index,f= $first,l = $last,e = $even, o = $odd){
+    First:{{f}} - Last:{{l}} - Even:{{e}} -Odd:{{o}} : {{item}}<br>   
+  } -->
+
+  <!-- <hr> -->
+  <!-- @defer (on timer(5s)){
+    <app-cool></app-cool>
+    }
+
+    <hr>
+    @defer (on timer(5s)){
+        <app-cool></app-cool>
+        } @placeholder (minimum 500ms){
+        <h1>Coming soon!!!!</h1>
+        } -->
+
+        <!-- <hr> -->
+        <!-- <h1 #data>Click here to work</h1>
+        <div style="border: 3px solid crimson;">
+        @defer(on interaction(data)) {
+            <app-cool></app-cool>
+            }  @placeholder (minimum 500ms){
+                <h1>placeholder</h1>
+                } 
+            </div> -->
+            <!-- <h1 #data>click here to load </h1>
+            @defer(on hover(data)) {
+                <app-cool></app-cool>
+                }  @placeholder (minimum 500ms){
+                    <h1>placeholder</h1>
+                    }  -->
+
+                    <!-- @defer(on immediate) {
+                        <app-cool></app-cool>
+                        }  @placeholder (minimum 500ms){
+                            <h1>placeholder</h1>
+                            }  -->
+
+<input type="button" value="click" (click)="show()"/>
+@defer(when  b) {
+    <app-cool></app-cool>
+    }  @placeholder (minimum 50ms){
+        <h1>placeholder</h1>
+        } 
+
+        @defer(when  b) {
+            <app-cool></app-cool>
+            }@loading (minimum 3000ms){
+                <h1>loading</h1>
+                } 
+    @placeholder (minimum 2000ms){
+                <h1>placeholder</h1>
+                } 
+    

@@ -1,0 +1,13 @@
+
+<img src="http://localhost:3000/{{pImage}}" width="200"/>
+{{pId}} <br><br>
+
+{{pName}} <br><br>
+
+{{pPrice}} <br><br>
+
+{{pQty}} <br><br>
+<label>Qty</label><br>
+<div style="width: 250px;"><input type="number" name="qty" [(ngModel)]="qty" class="form-control" ></div>
+<div style="width: 250px; border: 3px solid darksalmon; background-color: bisque; font-weight: bold ;"><label>Total Price: </label><label>{{qty*pPrice}}</label></div>
+<input type="button" value="Confirm Buy" class="btn btn-primary" (click)="placeorder()"><br>

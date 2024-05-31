@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-md-3" *ngFor = "let i of p">
+        <div style="margin: auto 10%;"><img src={{i.pimage}}></div>
+        <div style="margin: auto 12%;"><label>Product Id: </label>&nbsp;&nbsp;{{i.pid}}</div>
+        <div style="margin: auto 12%;"><label>Product Name: </label>&nbsp;&nbsp;{{i.pname}}</div>
+        <div style="margin: auto 12%;"><label>Product Price: </label>&nbsp;&nbsp;{{i.price | currency:'INR' }}</div>
+        <div style="margin: auto 12%;"><label>Price after discount: </label>&nbsp;&nbsp;{{i.price | discount :30 | currency:'INR'}}</div>
+        <div style="margin: auto 12%;"><label>Qty: </label>&nbsp;&nbsp;{{i.qty}}</div>
+        <div style="margin: auto 15%;"><a routerLink="/buy" [queryParams]="{pid:i.pid, pname:i.pname, price:i.price, qty:i.qty, pimage:i.pimage}" class="btn btn-success">Buy</a></div>
+        </div>
+    </div>

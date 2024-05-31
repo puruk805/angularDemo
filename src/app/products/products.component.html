@@ -1,0 +1,37 @@
+
+<input type="button" value="Hide/Show" class="btn btn-info" (click)="toggleHide()"/>
+
+<div class="row">
+    <div class="col-md-3" *ngFor = "let i of prod">
+        <div *ngIf="hide"><img src="http://localhost:3000/{{i.pimage}}"></div>
+        <div>{{i.pid}}</div>
+        <div>{{i.pname | uppercase}}</div>
+        <div>{{i.price | currency:'INR' }}</div>
+        <div>{{i.price | discount :30 | currency:'INR'}}</div>
+        <div>{{i.qty}}</div>
+        <div><a routerLink="/buy" [queryParams]="{pid:i.pid, pname:i.pname, price:i.price, qty:i.qty, pimage:i.pimage}" class="btn btn-success">Buy</a></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p>products works!</p>
+
+
+<div *ngFor="let item of prod; let i = index;let f = first;let l = last;let e = even;let o = odd;" [class.ev]="e" [class.od]="o">
+    {{i+1}}&nbsp;&nbsp;&nbsp;{{f}}&nbsp;&nbsp;&nbsp;{{l}}&nbsp;&nbsp;&nbsp;{{e}}&nbsp;&nbsp;&nbsp;{{o}}&nbsp;&nbsp;&nbsp;<br>
+{{item.pid}}&nbsp;&nbsp;&nbsp;{{item.pname}}&nbsp;&nbsp;&nbsp;{{item.price}}&nbsp;&nbsp;&nbsp;
+{{item.qty}}&nbsp;&nbsp;&nbsp;<img src={{item.pimage}}><br><br><br><br>
+
+
+</div> -->

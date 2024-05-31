@@ -1,0 +1,24 @@
+
+<p>feedback works!</p>
+
+
+<form [formGroup]="fg" novalidate (ngSubmit)="showdata(fg.value)">
+
+<input type=text formControlName="username" class="form-control">
+<div class="btn btn-warning" *ngIf="fg.get('username').touched  && fg.get('username').errors?.required">
+   Pls enter the username
+</div>
+<input type=text formControlName="email"class="form-control">
+<div class="btn btn-warning" *ngIf="fg.get('email').touched  && fg.get('email').errors?.email">
+    Pls enter valid email
+ </div>
+<input type=text formControlName="message" class="form-control">
+<div class="btn btn-warning" *ngIf="fg.get('message').touched  && fg.get('message').errors?.maxlength">
+    Max length should be 10char
+ </div>
+ <input type="text" formControlName="age" class="form-control">
+ <div class="btn btn-warning" *ngIf="fg.get('age').touched  && fg.get('age').errors?.age">
+  age should be greater that 18
+ </div>
+<input type="submit"   value="send message" class="btn btn-info" />
+</form>
